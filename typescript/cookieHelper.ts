@@ -24,6 +24,11 @@ function setCookie(cookieName:string, cookieValue:string, daysTilExpire:number){
     document.cookie = `${cookieName}=${cookieValue};expires=${eDate}`;
 }
 
+/**
+ * Gets value for the cookie with the desired cookieName
+ * Returns empty string if not found
+ * @param cookieName
+ */
 function getCookieValue(cookieName:string):string{
     let allCookies = document.cookie;
 
@@ -44,7 +49,14 @@ function getCookieValue(cookieName:string):string{
         let currAttr:string = cookieAttributes[index].trim();
 
         //check if currAttr is our cookie
-        if(currAttr.startsWith(cookieName + "="))
+        if(currAttr.startsWith(cookieName + "=")){
         
+            let equalPos = currAttr.indexOf("=");
+            let currValue = currAttr.substr(equalPos + 1);
+
+            return currValue;
+        }
     }
+
+    return "";
 }
