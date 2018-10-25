@@ -2,7 +2,7 @@
 
     "files": [
 
-        "myTypeScriptFile.ts"
+        "typescript/cookieHelper.ts"
 
     ],
 
@@ -12,7 +12,7 @@
 
         "outDir": "scripts",
 
-        "target": "es5",
+        "target": "es2015",
 
         "watch" : true
 
