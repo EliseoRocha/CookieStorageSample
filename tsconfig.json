@@ -2,7 +2,9 @@
 
     "files": [
 
-        "typescript/cookieHelper.ts"
+        "typescript/cookieHelper.ts",
+        "typescript/Product.ts",
+        "typescript/app.ts"
 
     ],
 

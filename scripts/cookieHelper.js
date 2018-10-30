@@ -1,4 +1,5 @@
 function setCookie(cookieName, cookieValue, daysTilExpire) {
+    cookieValue = encodeURIComponent(cookieValue);
     let expireDate = new Date();
     expireDate.setDate(expireDate.getDate() + daysTilExpire);
     let eDate = expireDate.toUTCString();
@@ -17,7 +18,7 @@ function getCookieValue(cookieName) {
         if (currAttr.startsWith(cookieName + "=")) {
             let equalPos = currAttr.indexOf("=");
             let currValue = currAttr.substr(equalPos + 1);
-            return currValue;
+            return decodeURIComponent(currValue);
         }
     }
     return "";

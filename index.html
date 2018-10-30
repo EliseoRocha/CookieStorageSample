@@ -5,16 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-    <h1>Cookie Test</h1>
+    <h1>Shopping Cart Sample</h1>
+
+    <div class="product">
+        <img src="https://via.placeholder.com/150">
+        <h3>Widget</h3>
+        <h3>$9.99</h3>
+    </div>
 
     <script src="scripts/cookieHelper.js"></script>
 
-    <script>alert("Creating Cookie!");setCookie("Test", "joe's data", 7);
+    <script>
+        /* FOR NOTES****************************
+        //creating a JavaScript object
+        let product = {
+            title: "Widget",
+            price: 9.99
+        };
+
+        //conver product into a string
+        let prodStr = JSON.stringify(product);
+        console.log(prodStr);
+
+        alert("Creating Cookie!");
+        setCookie("Test", prodStr, 7);
     
-    let data = getCookieValue("Test");
-    alert(data);
+        //get string from cookie
+        let data = getCookieValue("Test");
+        //convert string into product object
+        data = JSON.parse(data);
+        alert(data.title);
+        alert(data.price);
+        */
     </script>
 </body>
 </html>

@@ -13,6 +13,9 @@
  * @param daysTilExpire Days from today, until the cookie expires
  */
 function setCookie(cookieName:string, cookieValue:string, daysTilExpire:number){
+    //Encoding all special characters
+    cookieValue = encodeURIComponent(cookieValue);
+
     // Get today's date and added daysTilExpired
     let expireDate = new Date();
 
@@ -54,7 +57,7 @@ function getCookieValue(cookieName:string):string{
             let equalPos = currAttr.indexOf("=");
             let currValue = currAttr.substr(equalPos + 1);
 
-            return currValue;
+            return decodeURIComponent(currValue);
         }
     }
 
