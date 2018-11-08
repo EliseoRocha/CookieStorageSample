@@ -4,38 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/site.css">
+    <meta name="Description" content="Example website demonstrating a shopping cart using cookie storage with JavaScript">
+    <title>Shopping Cart JavaScript example</title>
+    <link rel="stylesheet" href="css/site.min.css">
 </head>
 <body>
     <h1>Shopping Cart Sample</h1>
 
+    <div class="cart">
+        <img height="50" alt="Shopping Cart Icon" src="images/shoppingCart.png">
+        <span>0</span>
+    </div>
+
     <div class="product">
-        <img src="https://via.placeholder.com/150">
+        <p data-title="Widget"
+           data-price="9.99">Add to Cart</p>
+        <img title="Widget" alt="Picture of a widget" src="https://via.placeholder.com/150">
         <h3>Widget</h3>
         <h3>$9.99</h3>
     </div>
 
-    <script src="scripts/cookieHelper.js"></script>
+    <div class="product">
+        <p data-title="Gadget" data-price="120">Add to Cart</p>
+        <img title="Gadget" alt="Picture of a gadget" src="https://via.placeholder.com/150">
+        <h3>Gadget</h3>
+        <h3>$120.00</h3>
+    </div>
 
+    <script src="scripts/app.js"></script>
     <script>
-        /* FOR NOTES****************************
+        /* FOR NOTES********************************
         //creating a JavaScript object
         let product = {
             title: "Widget",
             price: 9.99
         };
 
-        //conver product into a string
+        //convert product into a string
         let prodStr = JSON.stringify(product);
         console.log(prodStr);
 
-        alert("Creating Cookie!");
+        alert("Creating cookie!");
         setCookie("Test", prodStr, 7);
-    
+
         //get string from cookie
         let data = getCookieValue("Test");
-        //convert string into product object
+        //convert string into Product object
         data = JSON.parse(data);
         alert(data.title);
         alert(data.price);

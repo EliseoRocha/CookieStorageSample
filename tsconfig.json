@@ -4,7 +4,8 @@
 
         "typescript/cookieHelper.ts",
         "typescript/Product.ts",
-        "typescript/app.ts"
+        "typescript/app.ts",
+        "typescript/cookieHelper.ts"
 
     ],
 
@@ -13,6 +14,8 @@
         "removeComments": true,
 
         "outDir": "scripts",
+
+        "outFile": "scripts/app.js",
 
         "target": "es2015",
 

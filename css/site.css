@@ -1,25 +1,55 @@
-
 body{
-    margin-left: .5px;
+    margin-left: .5em;
 }
 
-h1{
+h1 {
     margin-top: .3em;
     text-align: center;
 }
 
+.product > img{
+    border-radius: 70px;
+    float: left;
+    margin-right: 1em;
+}
+
+div.product > p{
+    margin-top: 0px;
+    color: white;
+    padding: .3em;
+    border-radius: 0px 9px 0px 0px;
+    border: 1px solid black;
+    background-color: brown;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
 .product{
+    position: relative;
     border: 1px solid black;
     padding: 1em;
-    background-color: teal;
+    background-color: beige;
     border-radius: 10px;
     height: 200px;
-    width: 30%;
+    width: 50%;
     box-sizing: border-box;
 }
 
-.product > img{
+.cart{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    margin-top: .5em;
+    margin-right: .5em;
+}
+
+.cart > span{
+    background-color: blue;
+    color: white;
+    padding: .2em .8em;
     border-radius: 10px;
-    float: left;
-    margin-right: 1em;
+    position: absolute;
+    top: 2.5em;
+    right: -.3em;
 }
