@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Cookie Test</h1>
+
+    <script src="scripts/cookieHelper.js"></script>
+    <script>
+        alert("Creating cookie!");
+        setCookie("Test", "joe's data", 7);
+
+        let data = getCookieValue("Test");
+        alert(data);
+    </script>
+</body>
+</html>

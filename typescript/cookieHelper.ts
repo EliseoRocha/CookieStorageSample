@@ -13,6 +13,10 @@
  * @param daysTilExpire Days from today, until the cookie expires
  */
 function setCookie(cookieName:string, cookieValue:string, daysTilExpire:number){
+
+    //encoding all special characters
+    cookieValue = encodeURIComponent(cookieValue);
+
     // Get today's date and added daysTilExpired
     let expireDate = new Date();
 
@@ -35,7 +39,7 @@ function getCookieValue(cookieName:string):string{
     console.log(allCookies);
 
     //split up big cookie string into an array
-    let cookieAttributes:string[] = allCookies.split(",");
+    let cookieAttributes:string[] = allCookies.split(";");
 
     //FirstCookie=FirstValue;expires=somedate;SecondCookie=secVal;expires
     //[0]: FirstCookie=FirstValue
@@ -44,7 +48,15 @@ function getCookieValue(cookieName:string):string{
         let currAttr:string = cookieAttributes[index].trim();
 
         //check if currAttr is our cookie
-        if(currAttr.startsWith(cookieName + "="))
-        
+        //*NOTE: ECMAScript2015 or newer must be target
+        //for startsWith to be recognized; alternativly we
+        //could use indexOf
+        if(currAttr.startsWith(cookieName + "=")){
+            let equalPos = currAttr.indexOf("=");
+            let currValue = currAttr.substr(equalPos + 1);
+
+            return decodeURIComponent(currValue);
+        }
     }
+    return "";
 }
